@@ -485,7 +485,7 @@
       </defaultVarList>
     </step>
   </group>
-  <group name="Postinstall" disable="false" continueOnError="false" description="" expand="false">
+  <group name="Postinstall" disable="false" continueOnError="false" description="" expand="true">
     <condition>
       <expression type="SMS_TaskSequence_VariableConditionExpression">
         <variable name="Variable">PHASE</variable>
@@ -493,7 +493,7 @@
         <variable name="Value">POSTINSTALL</variable>
       </expression>
     </condition>
-    <group expand="false" name="Custom Tasks 1" description="" disable="false" continueOnError="false">
+    <group expand="true" name="Custom Tasks 1" description="" disable="false" continueOnError="false">
       <action />
       <step type="SMS_TaskSequence_RunCommandLineAction" name="OSD Background &quot;PreBoot Customize&quot;" description="%deployroot%\" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
         <defaultVarList>
@@ -507,7 +507,7 @@
       </step>
       <step type="BDD_RunPowerShellAction" name="Preboot Customize" description="%deployroot%\Applications\Config\Scripts\PreBootCustomize.ps1" disable="false" continueOnError="false" successCodeList="0 3010">
         <defaultVarList>
-          <variable name="ScriptName" property="ScriptName">%deployroot%\Scripts\Extras\WIN10\PreBootCustomize.ps1</variable>
+          <variable name="ScriptName" property="ScriptName">%deployroot%\Applications\Config\CustomizeWindows\PreBootCustomize.ps1</variable>
           <variable name="Parameters" property="Parameters"></variable>
           <variable name="PackageID" property="PackageID" />
         </defaultVarList>
@@ -681,14 +681,13 @@
         <variable name="LoadProfile" property="LoadProfile">false</variable>
       </defaultVarList>
     </step>
-    <group name="Custom Tasks 2" disable="false" continueOnError="false" expand="false" description="">
-      <step type="BDD_RunPowerShellAction" name="First boot Customize" description="" disable="false" continueOnError="false" successCodeList="0 3010">
+    <group name="Custom Tasks 2" disable="false" continueOnError="false" expand="true" description="">
+      <step type="BDD_InstallApplication" name="First boot Customize" description="" disable="false" continueOnError="false" runIn="WinPEandFullOS" successCodeList="0 3010">
         <defaultVarList>
-          <variable name="ScriptName" property="ScriptName">%deployroot%\Scripts\Extras\WIN10\FirstbootCustomize.ps1</variable>
-          <variable name="Parameters" property="Parameters"></variable>
-          <variable name="PackageID" property="PackageID" />
+          <variable name="ApplicationGUID" property="ApplicationGUID">{e887ed85-9913-46ad-ab5f-f69f4954941b}</variable>
+          <variable name="ApplicationSuccessCodes" property="ApplicationSuccessCodes">0 3010</variable>
         </defaultVarList>
-        <action>cscript.exe "%SCRIPTROOT%\ZTIPowerShell.wsf</action>
+        <action>cscript.exe "%SCRIPTROOT%\ZTIApplications.wsf"</action>
       </step>
       <step type="SMS_TaskSequence_RebootAction" name="Restart computer" description="" disable="false" continueOnError="false" runIn="WinPEandFullOS" successCodeList="0 3010">
         <defaultVarList>
