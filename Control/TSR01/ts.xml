@@ -627,7 +627,7 @@
     <step type="BDD_InstallUpdatesOffline" name="Apply Patches" disable="false" continueOnError="false" successCodeList="0 3010" description="" startIn="">
       <action>cscript.exe "%SCRIPTROOT%\ZTIPatches.wsf"</action>
       <defaultVarList>
-        <variable name="PackageSelectionProfile" property="PackageSelectionProfile">All Packages</variable>
+        <variable name="PackageSelectionProfile" property="PackageSelectionProfile">Windows Updates</variable>
       </defaultVarList>
     </step>
     <step type="SMS_TaskSequence_RunCommandLineAction" name="Add Windows Recovery (WinRE)" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
