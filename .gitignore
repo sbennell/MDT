@@ -4,3 +4,6 @@ Boot/MDT_x64.iso
 Audit.log
 Backup/*
 Boot/*
+Captures/*
+Out-of-Box Drivers/*
+Packages/*
