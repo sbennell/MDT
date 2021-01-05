@@ -37,5 +37,4 @@ If ($ChocoExe){
     Exit 666
 }
 
-
 If(Test-Path -Path "C:\Users\Public\Desktop\LibreOffice*.lnk") {Remove-Item -Path "C:\Users\Public\Desktop\LibreOffice*.lnk" -Force}
