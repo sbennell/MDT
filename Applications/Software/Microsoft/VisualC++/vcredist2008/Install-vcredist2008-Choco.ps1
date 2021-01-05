@@ -1,4 +1,4 @@
-#Version 2020.1
+#Version 2021.2
 #Stewart Bennell 5/01/2021
 #Bennell IT
 
@@ -26,13 +26,13 @@ If ( get-command -Name choco.exe -ErrorAction SilentlyContinue ){
 
 If ($ChocoExe){
 
-    start-process -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --force --confirm --install-if-not-installed -params $Params" -Wait
+    start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --force --confirm --install-if-not-installed -params $Params" -Wait
     
 	If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){
 		write-host "Installed"
 		Set-ItemProperty -Path 'Registry::HKLM\SOFTWARE\SOE\Applications' -Value "Installed" $ChocoPackage -Type String
 	} else {
-		start-process -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --version=$FallbackVer --force --confirm --install-if-not-installed -params $Params" -Wait
+		start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --version=$FallbackVer --force --confirm --install-if-not-installed -params $Params" -Wait
 		If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){
 		write-host "Installed"
 		Set-ItemProperty -Path 'Registry::HKLM\SOFTWARE\SOE\Applications' -Value "Installed" $ChocoPackage -Type String
