@@ -1,0 +1,5 @@
+@Echo Off
+CLS
+
+:QUIT
+EXIT 0

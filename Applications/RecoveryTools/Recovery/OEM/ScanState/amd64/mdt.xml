@@ -1,0 +1,16 @@
+<migration urlid="http://www.microsoft.com/migration/1.0/migxmlext/test">
+<!-- This component forces exclusion of SkyDrive/OneDrive Sync Folders -->
+ <component type="Documents" context="User">
+     <displayName>Exclude MININT and MDT</displayName>
+     <role role="Data">
+     <rules>
+      <unconditionalExclude>
+      <objectSet>
+       <pattern type="File">c:\MININT*\* [*]</pattern>
+       <pattern type="File">c:\_SMSTaskSequence*\* [*]</pattern>
+      </objectSet>
+      </unconditionalExclude>
+     </rules>
+   </role>
+ </component>
+ </migration>

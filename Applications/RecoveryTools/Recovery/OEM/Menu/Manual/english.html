@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Computer Recovery Tools - Documentation</title>
+		<link rel="alternate" type="application/rss+xml" title="egrappler.com" href="feed/index.html">
+		<link href="http://fonts.googleapis.com/css?family=Raleway:700,300" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/prettify.css">
+	</head>
+	<body data-post="http://www.egrappler.com/free-product-documentation-template/" style="margin-top:45px">
+	<nav>
+	  <div class="container">
+		<h1>Computer Recovery Tools</h1>
+		<div id="menu">
+		  <ul class="toplinks">
+			<li><a href="./english.html">English</a></li>
+			<li><a href="./french.html">Français</a></li>
+		  </ul>
+		</div>
+		<a id="menu-toggle" href="#" class=" ">&#9776;</a></div>
+	</nav>
+	<header>
+	  <div class="container">
+		<h2 class="docs-header">User Documentation</h2>
+	  </div>
+	</header>
+	<section>
+	  <div class="container">
+		<ul class="docs-nav" id="menu-left">
+		  <li><strong>Getting Started</strong></li>
+		  <li><a href="#welcome" class=" ">Welcome</a></li>
+		  <li><a href="#features" class=" ">Features</a></li>
+		  <li class="separator"></li>
+		  <li><strong>Recovery Tools</strong></li>
+		  <li><a href="#tools_mainmenu" class=" ">Main menu</a></li>
+		  <li class="separator"></li>
+		  <li><strong>Recovery environment</strong></li>
+		  <li><a href="#re_bootrepair" class=" ">Boot repair</a></li>
+		  <li><a href="#re_reset" class=" ">Reset the computer</a></li>
+		  <li><a href="#re_browser" class=" ">File browser</a></li>
+		  <li class="separator"></li>
+		  <li><strong>Recovery media</strong></li>
+		  <li><a href="#rm_creation" class=" ">Creating recovery media</a></li>
+		  <li><a href="#rm_reinstall" class=" ">Reinstalling Windows</a></li>
+		  <li class="separator"></li>
+		  <li><strong>System Restore</strong></li>
+		  <li><a href="#rp" class=" ">Restore system files and settings</a></li>
+		  <li class="separator"></li>
+		  <li><strong>File history</strong></li>
+		  <li><a href="#fh_config" class=" ">Configuration</a></li>
+		  <li><a href="#fh_restore" class=" ">Restore personal files</a></li>
+		  <li class="separator"></li>
+		  <li><strong>Antivirus</strong></li>
+		  <li><a href="#av_update" class=" ">Updating</a></li>
+		  <li><a href="#av_scan" class=" ">Scanning for virus</a></li>
+		  <li class="separator"></li>
+		  <li><strong>File undelete</strong></li>
+		  <li><a href="#fu" class=" ">Restoring files</a></li>
+		  <li class="separator"></li>
+		  <li><strong>License and copyrights</strong></li>
+		  <li><a href="#tools_support" class=" ">Recovery tools support</a></li>
+		  <li><a href="#tools_warranty" class=" ">Recovery tools warranty</a></li>
+		  <li><a href="#tools_lic" class=" ">Recovery tools license</a></li>  
+		</ul>
+		<div class="docs-content">
+		  <h2>Getting Started</h2>
+		  <h3 id="welcome">Welcome</h3>
+			<p>Hi! And welcome the the computer recovery tools manual!</p>
+			<p>Your system integrator has installed a collection of tools which, combined with the powerfull tools already present in Windows 10, will assure you peace of mind knowing you will always have options to be back on track rapidly if anything happen to your Windows installation.</p>
+			<p>If not already done, we recommend you to immediatly create a recovery media by following the instructions in the <a href="#rm_creation">corresponding section</a>.</p>
+		  <h3 id="features">Features</h3>
+			<p>
+				The computer recovery tools is a single point of access for many built-in utilities like:
+				<ul>
+					<li>Windows Recovery Environment (WinRE)</li>
+						<li>Repair boot problem, reinstall Windows, access off-line files</li>
+					<li>Windows System Restore</li>
+						<li>Revert back changes made by software and new drivers</li>
+					<li>Windows File History</li>
+						<li>Automatic back-up of file on an attached USB drive</li>
+
+				</ul>
+				It also gives some more options normally not found in Windows like:
+				<ul>
+					<li>Creating a recovery media for your computer</li>
+						<ul><li>Revert back to an image made by your system integrator</li></ul>
+					<li>Independent Antivirus based on ClamWim</li>
+						<ul><li>Detect and delete virus files when other antivirus solution don't work</li></ul>
+					<li>File undelete tool</li>
+						<ul><li>You can recover recently deleted files from your computer</li></ul>
+				</ul>
+			</p>
+		  <hr>
+		  <h2>Recovery Tools</h2>
+		  <h3 id="tools_mainmenu">Main menu</h3>
+			<p>Upon starting, you will be greeted by the following menu. You will find description of each function under the image.</p>
+			<img src="./images/english/tools-mainmenu.png"/>
+			<p>Clicking on <img src="./images/english/tools-winre.bmp"/> will launch the Windows Recovery Environment (WinRE), which is a built-in repair environment in Windows 10 that allows you to do various operation on your Windows installation, like <a href="#re_bootrepair">repairing problems that prevent Windows from booting normally</a> and <a href="#re_reset">reseting Windows</a> (Windows reinstallation). An <a href="#re_browser">offline file browser</a> (to access files from an unbootable system) has also been added.</p>
+			<p>Clicking on <img src="./images/english/tools-recoverymedia.bmp"/> will launch the recovery media creator. A recovery media allows you to fully <a href="#rm_reinstall">reinstall Windows</a> on a new hard-drive or when the Windows Recovery Environment is unable to repair Windows. Please note that the recovery media do not allows you to keep your personal files. We recommends you to <a href="#rm_creation">create a recovery media</a> a soon as possible.</p>
+			<p>Clicking on <img src="./images/english/tools-systemrestore.bmp"/> will launch the Windows System Restore pannel which allows you to <a href="#rp">revert back changes</a> made by Windows Updates, newly installed applications or drivers.</p>
+			<p>Clicking on <img src="./images/english/tools-filehistory.bmp"/> will launch the File History pannel which allows you to <a href="#fh_config">configure a periodic backup</a> of your personnal files on a USB drive or <a href="#fh_restore">restore files</a> previously saved on it.</p>
+			<p>Clicking on <img src="./images/english/tools-antivirus.bmp"/>, if enabled by your system integrator, will launch an independent antivirus which can help you <a href="#av_scan">detect and removes infected files</a> in case your main security software became corrupted or stopped working. This application do not provide live protection and should be only used in case of emergency. Please note that you will have to <a href="#av_update">update the detection catalog</a> on first use, so a working Internet connection is required.</p>
+			<p>Clicking on <img src="./images/english/tools-undelete.bmp"/>, if enabled by your system integrator, will launch a software to help you <a href="#fu">recover accidently deleted files</a> from your computer.</p>
+		  <hr>
+		  <h2>Recovery environment</h2>
+			<p>Windows 10 come with the Windows Recovery Environment, a small application outsite Windows that can help you diagnose and repair Windows. You can use it to fix booting problems, reinstall Windows and go back to a previous restore point. An offline file browser to quickly copy files to and from this computer to a USB drive is also included with the help of the computer recovery tools installed by your system integrator.</p>
+			<p>The Windows Recovery Environment can be accessed from the <a href="#tools_mainmenu">main menu</a> directly or automatically after 3 failed boot attempts.</p>
+		  <h3 id="re_bootrepair">Boot repair</h3>
+			<p>If Windows cannot boot correctly, you can try the following options.</p>
+			<img src="./images/english/re-mainmenu.png"/>
+			<p>First, click on "Troubleshoot".</p>
+			<img src="./images/english/re-troubleshoot.png"/>
+			<p>Then, click on "Advanced options".</p>
+			<img src="./images/english/re-advancedoptions.png"/>
+			<p>Finally, click on "Startup Repair" and follow the instructions.</p>
+			<p>You can also try the "System Restore" option to go back to a previous restore point to fix problems made by newly installed updates, applications or drivers.</p>
+		  <h3 id="re_reset">Reset the the computer</h3>
+			<p>If your computer cannot be repaired (or if you simply start from fresh) you can also reinstall Windows through the recovery environment. To do so, please follow the following steps.</>
+			<img src="./images/english/re-mainmenu.png"/>
+			<p>First, click on "Troubleshoot".</p>
+			<img src="./images/english/re-troubleshoot.png"/>
+			<p>Then, click on "Reset this PC".</p>
+			<img src="./images/english/re-reset.png"/>
+			<p>You can then decide to keep your personal files (music, documents, pictures, etc.) or delete everything for a clean install. In both case, all applications (except the one pre-installed by your system integrator) will be deleted.</p>
+			<img src="./images/english/re-reset-source.png"/>
+			<p>Finally, you can select the "Cloud download" to use the latest Windows 10 version (direct Internet connection required, Wifi not available) or "Local reinstall" to use use the same version currently installed on the computer. This will takes som time and your computer will reboot a few time.</p>
+		  <h3 id="re_browser">File browser</h3>
+			<p>If your computer cannot boot and you quickly need access to your files (to continue working on another computer by example) you can use the file browser that has been incorporated by your system integrator into the recovery environment. Please connect a USB drive (HDD, Flash drive, etc.) before continuing.</p>
+			<img src="./images/english/re-mainmenu.png"/>
+			<p>First, click on "Troubleshoot".</p>
+			<img src="./images/english/re-troubleshoot.png"/>
+			<p>Then, click on "Advanced tools".</p>
+			<img src="./images/english/re-advancestools.png"/>
+			<p>Finally, click on "File browser". You will then have access to all the files of your computer and you will then be able to copy them to or from an USB drive.</p>
+
+		  <hr>
+		  <h2>Recovery media</h2>
+			<p>Although your computer is equipped with the Windows Recovery environment that you can use to <a href="#re_reset">reset your PC</a>, the computer recovery tools allows you to create a recovery media (USB drive) to reinstall your computer. This can be usefull if you replace you internal storage or if the recovery environment is unable to reinstall Windows due to file corruption.</p>
+		  <h3 id="rm_creation">Creating recovery media</h3>
+			<p>From the computer recovery tools menu, click on <img src="./images/english/tools-recoverymedia.bmp"/> and follow the on-screen instruction. Since your system integrator may have opted-out of some available option no visual instructions will be provided since this is a generic documentation.</p>
+		  <h3 id="rm_reinstall">Reinstalling Windows</h3>
+			<p>To reinstall Windows, simply connect the USB drive in the computer and during the boot sequence select it to boot on the recovery media and follows the on-screen instructions from there. Since each computer has different way to select the boot option, please refer to your computer documentation for more details as this documentation is generic.</p>
+
+		  <hr>
+		  <h2>System Restore</h2>
+			<p>Windows automatically create restore point when some softwares are installed, when drivers are changed and before some updates. If anything goes wrong, you can use System Restore to roll-back theses change.</p>
+		  <h3 id="rp">Restore system files and settings</h3>
+			<p>From the computer recovery tools menu, click on <img src="./images/english/tools-systemrestore.bmp"/> to launch the System Restore pannel. From there, select the restore point to use. If your computer cannot boot, you can also restore it to a previous state from the <a href="#re_bootrepair">Recovery Environment</a>.</p>
+
+		  <hr>
+		  <h2>File history</h2>
+			<p>Although you computer is equipped with a set of tools to maintain it in good working order and to easily reinstall Windows, keeping a backup copies of your files is important. Thanks to Windows File Hystory, this process is easy and only required an USB drive (Flash drive, USB hard drive, etc.) to works. First, connect the USB drive to use, the continue with the configuration section.</p>
+			<p>From the computer recovery tools menu, click on <img src="./images/english/tools-filehistory.bmp"/> to launch File Hystory.</p>
+		  <h3 id="fh_config">Configuration</h3>
+			<p>On first run you will be presented with the following screen.</p>
+			<img src="./images/english/fh-configuration.png"/>
+			<p>Plese confirm the drive that will be used for backup (#1). If it is not the good one, open the "Select drive" (#2) option to select the good destination. Finally, click on "Turn on" to enable automatic backup of your files.</p>
+		  <h3 id="fh_restore">Restore personal files</h3>
+			<p>To restore you files, first be sure to have plugged-in your USB drive used for the backup.</p>
+			<img src="./images/english/fh-step1.png"/>
+			<p>Then click on "Restore personal file" (#1).</p>
+			<img src="./images/english/fh-step2.png"/>
+			<p>Then open the folder from where you whant to restore file by double-clicking on it (#1).</p>
+			<img src="./images/english/fh-step3.png"/>
+			<p>Finally, select the file to restore (#1) and click on the restore button (#2).</p>
+
+		  <hr>
+		  <h2>Antivirus</h2>
+			<p>Your computer came preinstalled with an antivirus, either Windows Defender or another one installed by your system integrator. Still, it can happens sometime that an antivirus becore corrupted or worse, was attacked by a virus and stopped working. The computer recovery tools come with an independent antivirus to help you in theses situation. Please note that the included antivirus does not offer on-access scan and should be used only for emergency case when your regular antivirus solution is not working.</p>
+			<p>From the computer recovery tools menu, click on <img src="./images/english/tools-antivirus.bmp"/> to launch the antivirus software.</p>
+		  <h3 id="av_update">Updating</h3>
+			<p>On first use, you will have to download the required files.</p>
+			<img src="./images/english/av-firstrun.png"/>
+			<p>Simply click on "Yes" and wait for the download to complete.</p>
+			<img src="./images/english/av-update.png"/>
+			<p>If you already used the software once, you will have to manually update the required files. To do so, click on the icon (#1) to launch the update process.</p>
+		  <h3 id="av_scan">Scanning for virus</h3>
+				<p>To scan for file, please do the following steps.</p>
+				<img src="./images/english/av-scan.png"/>
+				<p>Select the drive to scan (#1) or double-click on it to expand it and select a specific folder. Then click on "Scan" (#2) to launch the virus scanning process.</p>
+		  <hr>
+		  <h2>File undelete</h2>
+			<p>If you have accidently deleted a file there may be chance it is still on your computer. To recover it (undelete) go in the computer recovery tools menu.</p>
+		  <h3 id="fu">Restoring files</h3>
+			<p>Click on <img src="./images/english/tools-undelete.bmp"/> to launch the file undelete tool. You will then see the folowwing screen.</p>
+			<img src="./images/english/fu.png"/>
+			<p>Then, select the drive from where the file has been deleted (#1), click on "Scan" (#2) and wait. When the scan is completed select the file to recover from the list (#3).</p>
+			
+
+		  <hr>
+		  <h2>License and copyrights</h2>
+		  <h3 id="tools_support">Recovery tools support</h3>
+			<p><a href="https://www.anarethos.com">OEM / Factory recovery partition creator by Anarethos</a> has been used to create the recovery option on this computer. Support is offered for system integrator wanting to install the tools for the end-user but no support is provided for the end-user themselves. Please contact your system integrator if you need further assistance.</p>		  
+		  <h3 id="tools_warranty">Recovery tools warranty</h3>
+			<p>No warranty, neither explicit or implicit, are offered with you computer recovery tools. They offer a "best effort" to help you recover your computer and files but may fails. Neither the creator of the software, the creators of additions software used in this tool or your system integrator can be made responsible for data lost, lost of productivity or any problems you may encounter with the use of this software or your computer. Always do a back-up of you files!</p>
+		  <h3 id="tools_lic">Recovery tools license</h3>
+			<p>
+				<ul>
+					<li><a href="https://www.autoitscript.com">AutoIT</a> is used to run many script. AutoIT is made by Jonathan Bennett/The AutoIT group.</li>
+					<li><a href="https://doublecmd.sourceforge.io">Double Commander</a> is use as the main file browser in the Windows Recovery Environment and is made by Alexander Koblov and others.</li>
+					<li>The included antivirus is made by <a href="http://www.clamwin.com">ClamWin</a> and the <a href="https://portableapps.com/apps/security/clamwin_portable">portable version</a> is made by <a href="https://PortableApps.com">PortableApps.com</a>.</li>
+					<li>The <a href="https://google.github.io/material-design-icons">icons</a> used in the different menu are from Google.</li>
+					<li>The <a href="https://www.egrappler.com/doc-template/doc-template/docs.html">documentation template</a> come from eGrappler.</li>
+					<li>Finally, the whole recovery software (scripts, GUI, manual, etc.) is made by <a href="https://www.anarethos.com">Anarethos</a>.</li>
+				</ul>
+			</p>
+		</div>
+	  </div>
+	</section>
+	<section class="vibrant centered">
+	  <div class="container">
+		<h4>The recovery tools installed on this computer has been installed by you system integrator and support is offered through it.</h4>
+	  </div>
+	</section>
+	<footer>
+	  <div class="container">
+		<p>&copy; 2020 <a href="https://www.anarethos.com">Anarethos.com</a></p>
+	  </div>
+	</footer>
+
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/prettify/prettify.js"></script>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
+	<script src="js/layout.js"></script>
+	<!-- <script src="js/jquery.localscroll-1.2.7.js" type="text/javascript"></script> -->
+	<!-- <script src="js/jquery.scrollTo-1.4.3.1.js" type="text/javascript"></script> -->
+	<script src="js/jquery.localscroll-2.0.0.js" type="text/javascript"></script>
+	<script src="js/jquery.scrollTo-2.1.2.js" type="text/javascript"></script>	
+	<script type="text/javascript" src="../../wp-content/themes/piha/js/top-bar-l1.js" ></script>
+	<script type="text/javascript" src="../../wp-content/themes/piha/js/bsa-ads-l1.js" ></script>
+	</body>
+</html>

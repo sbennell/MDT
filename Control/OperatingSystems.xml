@@ -1,0 +1,275 @@
+<oss>
+	<os guid="{7e477c20-1f03-4d39-b206-45d0fd45e113}" enable="True">
+		<Name>Windows 10 Home</Name>
+		<CreatedTime>5/01/2021 2:02:06 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:06 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Home</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>1</ImageIndex>
+		<ImageName>Windows 10 Home</ImageName>
+		<Flags>Core</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>14785</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{56065c9d-b667-4dcc-ba90-e68e0e4f69aa}" enable="True">
+		<Name>Windows 10 Home N</Name>
+		<CreatedTime>5/01/2021 2:02:06 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:06 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Home N</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>2</ImageIndex>
+		<ImageName>Windows 10 Home N</ImageName>
+		<Flags>CoreN</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>14037</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{55ac6962-3d14-4132-98b9-9eecac3ef354}" enable="True">
+		<Name>Windows 10 Home Single Language</Name>
+		<CreatedTime>5/01/2021 2:02:06 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:06 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Home Single Language</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>3</ImageIndex>
+		<ImageName>Windows 10 Home Single Language</ImageName>
+		<Flags>CoreSingleLanguage</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>14770</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{00a6c701-da7b-4ce2-b3bc-76d24d3b9e0b}" enable="True">
+		<Name>Windows 10 Education</Name>
+		<CreatedTime>5/01/2021 2:02:06 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:06 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Education</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>4</ImageIndex>
+		<ImageName>Windows 10 Education</ImageName>
+		<Flags>Education</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>14996</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{1d77f60b-a714-4380-9e74-8e6b037f717d}" enable="True">
+		<Name>Windows 10 Education N</Name>
+		<CreatedTime>5/01/2021 2:02:06 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:06 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Education N</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>5</ImageIndex>
+		<ImageName>Windows 10 Education N</ImageName>
+		<Flags>EducationN</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>14273</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{cc7cb058-badf-4130-b2f2-47fd1287bbe7}" enable="True">
+		<Name>Windows 10 Pro</Name>
+		<CreatedTime>5/01/2021 2:02:06 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:06 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Pro</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>6</ImageIndex>
+		<ImageName>Windows 10 Pro</ImageName>
+		<Flags>Professional</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>15012</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{8967b2da-a720-4d44-b61d-4feaec7bc7c0}" enable="True">
+		<Name>Windows 10 Pro N</Name>
+		<CreatedTime>5/01/2021 2:02:07 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:07 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Pro N</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>7</ImageIndex>
+		<ImageName>Windows 10 Pro N</ImageName>
+		<Flags>ProfessionalN</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>14272</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{35f4d13b-2ad1-43f5-9d30-b0bc043bca39}" enable="True">
+		<Name>Windows 10 Pro Education</Name>
+		<CreatedTime>5/01/2021 2:02:07 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:07 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Pro Education</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>8</ImageIndex>
+		<ImageName>Windows 10 Pro Education</ImageName>
+		<Flags>ProfessionalEducation</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>14996</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{6eee6172-6100-424a-8f33-b8da5d438c40}" enable="True">
+		<Name>Windows 10 Pro Education N</Name>
+		<CreatedTime>5/01/2021 2:02:07 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:07 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Pro Education N</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>9</ImageIndex>
+		<ImageName>Windows 10 Pro Education N</ImageName>
+		<Flags>ProfessionalEducationN</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>14273</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{1fb4e2d2-4812-49c0-9540-7dc64890555f}" enable="True">
+		<Name>Windows 10 Pro for Workstations</Name>
+		<CreatedTime>5/01/2021 2:02:07 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:07 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Pro for Workstations</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>10</ImageIndex>
+		<ImageName>Windows 10 Pro for Workstations</ImageName>
+		<Flags>ProfessionalWorkstation</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>14996</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{7616ec5b-d8a2-49fc-a51e-3bfc089a098f}" enable="True">
+		<Name>Windows 10 Pro N for Workstations</Name>
+		<CreatedTime>5/01/2021 2:02:07 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:07 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Pro N for Workstations</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>11</ImageIndex>
+		<ImageName>Windows 10 Pro N for Workstations</ImageName>
+		<Flags>ProfessionalWorkstationN</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>14273</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{472f7ea3-cc84-4012-9cba-55cdb6bc0a3a}" enable="True">
+		<Name>Windows 10 Enterprise</Name>
+		<CreatedTime>5/01/2021 2:02:07 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:07 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Enterprise</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>12</ImageIndex>
+		<ImageName>Windows 10 Enterprise</ImageName>
+		<Flags>Enterprise</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>15006</Size>
+		<Language>en-US</Language>
+	</os>
+	<os guid="{806041bf-75aa-4e85-9065-90782d86958f}" enable="True">
+		<Name>Windows 10 Enterprise N</Name>
+		<CreatedTime>5/01/2021 2:02:07 AM</CreatedTime>
+		<CreatedBy>ad\sb</CreatedBy>
+		<LastModifiedTime>5/01/2021 2:02:07 AM</LastModifiedTime>
+		<LastModifiedBy>ad\sb</LastModifiedBy>
+		<Description>Windows 10 Enterprise N</Description>
+		<Platform>x64</Platform>
+		<Build>10.0.19041.685</Build>
+		<OSType>Windows IBS</OSType>
+		<Source>.\Operating Systems\Windows 10 x64</Source>
+		<IncludesSetup>True</IncludesSetup>
+		<SMSImage>False</SMSImage>
+		<ImageFile>.\Operating Systems\Windows 10 x64\Sources\install.swm</ImageFile>
+		<ImageIndex>13</ImageIndex>
+		<ImageName>Windows 10 Enterprise N</ImageName>
+		<Flags>EnterpriseN</Flags>
+		<HAL>acpiapic</HAL>
+		<Size>14269</Size>
+		<Language>en-US</Language>
+	</os>
+</oss>
