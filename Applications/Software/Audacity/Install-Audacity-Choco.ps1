@@ -1,4 +1,4 @@
-#Version 2021.2
+#Version 2021.3
 #Stewart Bennell 5/01/2021
 #Bennell IT
 
@@ -31,10 +31,12 @@ If ($ChocoExe){
 	If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){
 		write-host "Installed"
 		Set-ItemProperty -Path 'Registry::HKLM\SOFTWARE\SOE\Applications' -Value "Installed" $ChocoPackage -Type String
+		If(Test-Path -Path "C:\Users\Public\Desktop\audacity.ink") {Remove-Item –path "C:\Users\Public\Desktop\audacity.ink"}
 	} else {
 		start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --version=$FallbackVer --force --confirm --install-if-not-installed -params $Params" -Wait
 		If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){
 		write-host "Installed"
+		If(Test-Path -Path "C:\Users\Public\Desktop\audacity.ink") {Remove-Item –path "C:\Users\Public\Desktop\audacity.ink"}
 		Set-ItemProperty -Path 'Registry::HKLM\SOFTWARE\SOE\Applications' -Value "Installed" $ChocoPackage -Type String
 	} else {
 		throw 'Could not Install $ChocoPackage'
