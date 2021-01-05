@@ -25,23 +25,16 @@ If ( get-command -Name choco.exe -ErrorAction SilentlyContinue ){
 }
 
 If ($ChocoExe){
-
-    start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --force --confirm --install-if-not-installed -params $Params" -Wait
-    
+	start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --force --confirm --install-if-not-installed -params $Params" -Wait
 	If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){
 		write-host "Installed"
-		Set-ItemProperty -Path 'Registry::HKLM\SOFTWARE\SOE\Applications' -Value "Installed" $ChocoPackage -Type String
 	} else {
 		start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --version=$FallbackVer --force --confirm --install-if-not-installed -params $Params" -Wait
-		If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){
-		write-host "Installed"
-		Set-ItemProperty -Path 'Registry::HKLM\SOFTWARE\SOE\Applications' -Value "Installed" $ChocoPackage -Type String
-	} else {
-		throw 'Could not Install $ChocoPackage'
-		Exit 667		
-	}
-	}
-} else {
+		If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){write-host "Installed With Fallback Version"}
+		} 
+}else {
     throw 'Could not find choco.exe'
     Exit 666
 }
+
+If(Test-Path -Path "C:\Users\Public\Desktop\windirstat.lnk") {Remove-Item -Path "C:\Users\Public\Desktop\windirstat.lnk" -Force}
