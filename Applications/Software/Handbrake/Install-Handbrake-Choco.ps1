@@ -29,11 +29,13 @@ If ($ChocoExe){
     start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --force --confirm --install-if-not-installed -params $Params" -Wait
     
 	If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){
+		If(Test-Path -Path "C:\Users\Public\Desktop\handbrake.ink") {Remove-Item –path "C:\Users\Public\Desktop\handbrake.ink"}
 		write-host "Installed"
 		Set-ItemProperty -Path 'Registry::HKLM\SOFTWARE\SOE\Applications' -Value "Installed" $ChocoPackage -Type String
 	} else {
 		start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --version=$FallbackVer --force --confirm --install-if-not-installed -params $Params" -Wait
 		If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){
+		If(Test-Path -Path "C:\Users\Public\Desktop\handbrake.ink") {Remove-Item –path "C:\Users\Public\Desktop\handbrake.ink"}
 		write-host "Installed"
 		Set-ItemProperty -Path 'Registry::HKLM\SOFTWARE\SOE\Applications' -Value "Installed" $ChocoPackage -Type String
 	} else {
