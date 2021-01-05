@@ -824,7 +824,7 @@
           <action>cscript.exe "%SCRIPTROOT%\ZTIApplications.wsf"</action>
         </step>
       </group>
-      <group expand="false" name="Design &amp; Editing" description="" disable="false" continueOnError="false">
+      <group expand="true" name="Design &amp; Editing" description="" disable="false" continueOnError="false">
         <action />
         <step type="BDD_InstallApplication" name="Install - Audacity" description="" disable="false" continueOnError="false" runIn="WinPEandFullOS" successCodeList="0 3010">
           <defaultVarList>
@@ -855,7 +855,7 @@
           <action>cscript.exe "%SCRIPTROOT%\ZTIApplications.wsf"</action>
         </step>
       </group>
-      <group expand="false" name="Ripping/Buning" description="" disable="false" continueOnError="false">
+      <group expand="true" name="Ripping/Buning" description="" disable="false" continueOnError="false">
         <step type="BDD_InstallApplication" name="Install - Handbrake" description="" disable="false" continueOnError="false" runIn="WinPEandFullOS" successCodeList="0 3010">
           <defaultVarList>
             <variable name="ApplicationGUID" property="ApplicationGUID">{baf74267-b4fb-473e-838c-98dcca4a49bb}</variable>
