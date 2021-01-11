@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Reset>
+    <Run Phase="BasicReset_BeforeImageApply">
+        <Path>Scripts\Restore.cmd</Path>
+        <Duration>2</Duration>
+    </Run>
+    <Run Phase="BasicReset_AfterImageApply">
+        <Path>Scripts\Restore.cmd</Path>
+        <Duration>2</Duration>
+    </Run>
+    <Run Phase="FactoryReset_AfterImageApply">
+        <Path>Scripts\Restore.cmd</Path>
+        <Duration>2</Duration>
+    </Run>
+    <Run Phase="FactoryReset_AfterDiskFormat">
+        <Path>Scripts\Restore.cmd</Path>
+        <Duration>2</Duration>
+    </Run>
+    <SystemDisk>
+  		<MinSize>80000</MinSize>
+  		<DiskpartScriptPath>ReCreatePartitions.txt</DiskpartScriptPath>
+ 		<OSPartition>3</OSPartition>
+  		<WindowsREPartition>4</WindowsREPartition>
+   		<WindowsREPath>Recovery\WindowsRE</WindowsREPath>
+		<Compact>False</Compact>
+		<RestoreFromIndex>1</RestoreFromIndex>
+	</SystemDisk>
+</Reset>

@@ -485,7 +485,7 @@
       </defaultVarList>
     </step>
   </group>
-  <group name="Postinstall" disable="false" continueOnError="false" description="" expand="true">
+  <group name="Postinstall" disable="false" continueOnError="false" description="" expand="false">
     <condition>
       <expression type="SMS_TaskSequence_VariableConditionExpression">
         <variable name="Variable">PHASE</variable>
@@ -493,7 +493,7 @@
         <variable name="Value">POSTINSTALL</variable>
       </expression>
     </condition>
-    <group expand="true" name="Custom Tasks 1" description="" disable="false" continueOnError="false">
+    <group expand="false" name="Custom Tasks 1" description="" disable="false" continueOnError="false">
       <action />
       <step type="SMS_TaskSequence_RunCommandLineAction" name="OSD Background &quot;PreBoot Customize&quot;" description="%deployroot%\" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
         <defaultVarList>
@@ -731,7 +731,7 @@
         <variable name="LoadProfile" property="LoadProfile">false</variable>
       </defaultVarList>
     </step>
-    <group expand="true" name="Applications" description="" disable="false" continueOnError="false">
+    <group expand="false" name="Applications" description="" disable="false" continueOnError="false">
       <action />
       <step type="BDD_InstallApplication" name="Install - Chocolatey" description="" disable="false" continueOnError="false" runIn="WinPEandFullOS" successCodeList="0 3010">
         <defaultVarList>
@@ -740,7 +740,7 @@
         </defaultVarList>
         <action>cscript.exe "%SCRIPTROOT%\ZTIApplications.wsf"</action>
       </step>
-      <group expand="true" name="Runtimes" description="" disable="false" continueOnError="false">
+      <group expand="false" name="Runtimes" description="" disable="false" continueOnError="false">
         <step type="BDD_InstallRoles" name="Install - dot Net 2.0  and 3.0" description="" disable="false" continueOnError="false" runIn="WinPEandFullOS" successCodeList="0 3010">
           <defaultVarList>
             <variable name="OSRoleIndex" property="OSRoleIndex">13</variable>
@@ -751,7 +751,7 @@
           <action>cscript.exe "%SCRIPTROOT%\ZTIOSRole.wsf"</action>
         </step>
         <action />
-        <group expand="true" name="Visual C++ Redistributable Package" description="" disable="false" continueOnError="false">
+        <group expand="false" name="Visual C++ Redistributable Package" description="" disable="false" continueOnError="false">
           <step type="BDD_InstallApplication" name="Install - Visual C++ 2008 Redistributable Package" description="" disable="false" continueOnError="false" runIn="WinPEandFullOS" successCodeList="0 3010">
             <defaultVarList>
               <variable name="ApplicationGUID" property="ApplicationGUID">{992f2248-a73e-4c1d-b27b-b7f551d9a5b0}</variable>
@@ -824,7 +824,7 @@
           <action>cscript.exe "%SCRIPTROOT%\ZTIApplications.wsf"</action>
         </step>
       </group>
-      <group expand="true" name="Design &amp; Editing" description="" disable="false" continueOnError="false">
+      <group expand="false" name="Design &amp; Editing" description="" disable="false" continueOnError="false">
         <action />
         <step type="BDD_InstallApplication" name="Install - Audacity" description="" disable="false" continueOnError="false" runIn="WinPEandFullOS" successCodeList="0 3010">
           <defaultVarList>
@@ -855,7 +855,7 @@
           <action>cscript.exe "%SCRIPTROOT%\ZTIApplications.wsf"</action>
         </step>
       </group>
-      <group expand="true" name="Ripping/Buning" description="" disable="false" continueOnError="false">
+      <group expand="false" name="Ripping/Buning" description="" disable="false" continueOnError="false">
         <step type="BDD_InstallApplication" name="Install - Handbrake" description="" disable="false" continueOnError="false" runIn="WinPEandFullOS" successCodeList="0 3010">
           <defaultVarList>
             <variable name="ApplicationGUID" property="ApplicationGUID">{baf74267-b4fb-473e-838c-98dcca4a49bb}</variable>
@@ -997,7 +997,7 @@
         <action>smsboot.exe /target:WinPE</action>
       </step>
     </group>
-    <group expand="false" name="Clean Up" description="" disable="false" continueOnError="false">
+    <group expand="true" name="Clean Up" description="" disable="false" continueOnError="false">
       <action />
       <step type="SMS_TaskSequence_RunCommandLineAction" name="Marking updates as permanent" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
         <defaultVarList>
@@ -1017,16 +1017,9 @@
         <action>cscript.exe "%SCRIPTROOT%\ZTIApplications.wsf"</action>
       </step>
     </group>
-    <group name="Setup Recovery" disable="false" continueOnError="false" expand="false" description="">
+    <group name="Setup Recovery" disable="false" continueOnError="false" expand="true" description="">
       <condition></condition>
-      <step type="SMS_TaskSequence_SetVariableAction" name="Set AnswerFilePath" description="" disable="true" continueOnError="false" successCodeList="0 3010">
-        <defaultVarList>
-          <variable name="VariableName" property="VariableName">OSDAnswerFilePath</variable>
-          <variable name="VariableValue" property="VariableValue">%SCRIPTROOT%\Extras\recovery\Recovery\OEM\XML\unattend.xml</variable>
-        </defaultVarList>
-        <action>cscript.exe "%SCRIPTROOT%\ZTISetVariable.wsf"</action>
-      </step>
-      <step type="SMS_TaskSequence_RunCommandLineAction" name="Cop Recovery files" description="%ToolRoot%\ServiceUI.exe  %windir%\system32\cmd.exe /c %SCRIPTROOT%\Extras\recovery\Copy_Recovery_files_UEFI.cmd" disable="true" continueOnError="true" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
+      <step type="SMS_TaskSequence_RunCommandLineAction" name="Cop Recovery files" description="%ToolRoot%\ServiceUI.exe  %windir%\system32\cmd.exe /c %SCRIPTROOT%\Extras\recovery\Copy_Recovery_files_UEFI.cmd" disable="false" continueOnError="true" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
         <defaultVarList>
           <variable name="PackageID" property="PackageID" />
           <variable name="RunAsUser" property="RunAsUser">false</variable>
@@ -1034,17 +1027,25 @@
           <variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"></variable>
           <variable name="LoadProfile" property="LoadProfile">false</variable>
         </defaultVarList>
-        <action>%ToolRoot%\ServiceUI.exe  %windir%\system32\cmd.exe /c %SCRIPTROOT%\Extras\recovery\Copy_Recovery_files.cmd</action>
+        <action>%ToolRoot%\ServiceUI.exe  %windir%\system32\cmd.exe /c %deployroot%\Applications\RecoveryTools\Copy_Recovery_files.cmd</action>
         <condition></condition>
       </step>
-      <step name="Execute Sysprep" disable="true" continueOnError="false" successCodeList="0 3010" description="" startIn="">
-        <action>cscript.exe "%SCRIPTROOT%\LTISysprep.wsf"</action>
+      <step type="SMS_TaskSequence_RunCommandLineAction" name="Copy Recovery UEFI Files" description="&#xD;&#xA;" disable="false" continueOnError="true" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
         <defaultVarList>
+          <variable name="PackageID" property="PackageID"></variable>
           <variable name="RunAsUser" property="RunAsUser">false</variable>
           <variable name="SMSTSRunCommandLineUserName" property="SMSTSRunCommandLineUserName"></variable>
           <variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"></variable>
           <variable name="LoadProfile" property="LoadProfile">false</variable>
         </defaultVarList>
+        <action>XCOPY "%deployroot%\Applications\RecoveryTools\Settings\UEFI\*.*" C:\Recovery\OEM\ /sevhky</action>
+        <condition>
+          <expression type="SMS_TaskSequence_VariableConditionExpression">
+            <variable name="Variable">IsUEFI</variable>
+            <variable name="Operator">equals</variable>
+            <variable name="Value">true</variable>
+          </expression>
+        </condition>
       </step>
     </group>
   </group>

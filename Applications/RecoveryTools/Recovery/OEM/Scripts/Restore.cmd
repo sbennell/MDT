@@ -14,7 +14,7 @@ ECHO %DATE%-%TIME%-Recovery-Start >>%DEST%:\Recovery\OEM\Logs\Logfile.txt
 ECHO *********************************
 ECHO Restoring Sysprep / OOBE script
 ECHO *********************************
-COPY /Y %DEST%:\Recovery\OEM\XML\Unattend.%PROCESSOR_ARCHITECTURE%.xml %DEST%:\Windows\Panther\Unattend.xml
+COPY /Y %DEST%:\Recovery\OEM\XML\UnAttend.xml %DEST%:\Windows\Panther\Unattend.xml
 
 ECHO *********************************
 ECHO Restoring files attributes

@@ -1,4 +1,4 @@
-#Version 2021.1
+#Version 2021.3
 #Stewart Bennell 5/01/2021
 #Bennell IT
 
@@ -37,4 +37,5 @@ If ($ChocoExe){
     Exit 666
 }
 
-If(Test-Path -Path "C:\Users\Public\Desktop\windirstat.lnk") {Remove-Item -Path "C:\Users\Public\Desktop\windirstat.lnk" -Force}
+If(Test-Path -Path "$Env:USERPROFILE\Desktop\WinDirStat.lnk") {Remove-Item -Path "$Env:USERPROFILE\Desktop\WinDirStat.lnk" -Force}
+If(Test-Path -Path "$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WinDirStat\WinDirStat.lnk") {Move-Item "$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WinDirStat*" "$Env:ProgramData\Microsoft\Windows\Start Menu\Programs"}
