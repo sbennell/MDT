@@ -1,4 +1,4 @@
-#Version 2021.2
+#Version 2021.3
 #Stewart Bennell 5/01/2021
 #Bennell IT
 
@@ -25,14 +25,24 @@ If ( get-command -Name choco.exe -ErrorAction SilentlyContinue ){
 }
 
 If ($ChocoExe){
-	start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --force --confirm --install-if-not-installed -params $Params" -Wait
+	write-output "Starting to install $ChocoPackage"
+	start-process -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --force --confirm --install-if-not-installed -params $Params" -Wait
 	If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){
 		write-host "Installed"
 	} else {
-		start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --version=$FallbackVer --force --confirm --install-if-not-installed -params $Params" -Wait
+		write-output "Fqailed to install $ChocoPackage Going install $ChocoPackage With fallback Version"
+		start-process -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --version=$FallbackVer --force --confirm --install-if-not-installed -params $Params" -Wait
 		If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){write-host "Installed With Fallback Version"}
 		} 
 }else {
     throw 'Could not find choco.exe'
     Exit 666
 }
+
+
+If(Test-Path -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\GIMP *.lnk") {
+	write-output "Renaming Gimp Starmenu name with out number"
+	Move-Item -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\GIMP *.lnk" -Destination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\GIMP.lnk" 
+	}	
+	
+	

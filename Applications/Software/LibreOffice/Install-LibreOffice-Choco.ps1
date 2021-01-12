@@ -1,5 +1,5 @@
-#Version 2021.2
-#Stewart Bennell 5/01/2021
+#Version 2021.3
+#Stewart Bennell 12/01/2021
 #Bennell IT
 
 $ChocoPackage = "libreoffice-still"
@@ -25,10 +25,12 @@ If ( get-command -Name choco.exe -ErrorAction SilentlyContinue ){
 }
 
 If ($ChocoExe){
+	write-output "Starting to install $ChocoPackage"
 	start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --force --confirm --install-if-not-installed -params $Params" -Wait
 	If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){
 		write-host "Installed"
 	} else {
+		write-output "Fqailed to install $ChocoPackage Going install $ChocoPackage With fallback Version"
 		start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --version=$FallbackVer --force --confirm --install-if-not-installed -params $Params" -Wait
 		If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){write-host "Installed With Fallback Version"}
 		} 
@@ -38,3 +40,7 @@ If ($ChocoExe){
 }
 
 If(Test-Path -Path "C:\Users\Public\Desktop\LibreOffice*.lnk") {Remove-Item -Path "C:\Users\Public\Desktop\LibreOffice*.lnk" -Force}
+
+$Filename = Get-Item 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LibreOffice*'
+If(Test-Path -Path $Filename\LibreOffice*.lnk) {Rename-Item $Filename -NewName LibreOffice}	
+			

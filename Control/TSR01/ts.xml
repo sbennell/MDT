@@ -485,7 +485,7 @@
       </defaultVarList>
     </step>
   </group>
-  <group name="Postinstall" disable="false" continueOnError="false" description="" expand="false">
+  <group name="Postinstall" disable="false" continueOnError="false" description="" expand="true">
     <condition>
       <expression type="SMS_TaskSequence_VariableConditionExpression">
         <variable name="Variable">PHASE</variable>
@@ -524,7 +524,7 @@
           </defaultVarList>
           <action>REG LOAD HKLM\SOF %OSDisk%\Windows\System32\config\software</action>
         </step>
-        <step type="SMS_TaskSequence_RunCommandLineAction" name="CONFIG - OEMInformation -  Model" description="" disable="true" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
+        <step type="SMS_TaskSequence_RunCommandLineAction" name="CONFIG - OEMInformation -  Model" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
           <defaultVarList>
             <variable name="PackageID" property="PackageID" />
             <variable name="RunAsUser" property="RunAsUser">false</variable>
@@ -532,17 +532,7 @@
             <variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"></variable>
             <variable name="LoadProfile" property="LoadProfile">false</variable>
           </defaultVarList>
-          <action>REG ADD "HKLM\SOF\Microsoft\Windows\CurrentVersion\OEMInformation" /v Model /t REG_SZ /d "SOE V20H2.1" /f</action>
-        </step>
-        <step type="SMS_TaskSequence_RunCommandLineAction" name="CONFIG - OEMInformation -  SupportURL" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
-          <defaultVarList>
-            <variable name="PackageID" property="PackageID" />
-            <variable name="RunAsUser" property="RunAsUser">false</variable>
-            <variable name="SMSTSRunCommandLineUserName" property="SMSTSRunCommandLineUserName"></variable>
-            <variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"></variable>
-            <variable name="LoadProfile" property="LoadProfile">false</variable>
-          </defaultVarList>
-          <action>cmd /c REG ADD "HKLM\SOF\Microsoft\Windows\CurrentVersion\OEMInformation" /v SupportURL /t REG_SZ /d "http://www.bennellit.com.au/" /f</action>
+          <action>REG ADD "HKLM\SOF\Microsoft\Windows\CurrentVersion\OEMInformation" /v Model /t REG_SZ /d "MDT-TSR01-2021.1.15" /f</action>
         </step>
         <step type="SMS_TaskSequence_RunCommandLineAction" name="CONFIG - Image-  Version" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
           <defaultVarList>
@@ -552,7 +542,7 @@
             <variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"></variable>
             <variable name="LoadProfile" property="LoadProfile">false</variable>
           </defaultVarList>
-          <action>REG ADD "HKLM\SOF\Microsoft\Windows\CurrentVersion\OEMInformation" /v Model /t REG_SZ /d "MDT-TSR01-2021.1.2" /f</action>
+          <action>REG ADD "HKLM\SOF\Microsoft\Windows\CurrentVersion\OEMInformation" /v Model /t REG_SZ /d "MDT-TSR01-2021.1.15" /f</action>
         </step>
         <action />
         <step type="SMS_TaskSequence_RunCommandLineAction" name="CONFIG - Image Info-  Build Date" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
@@ -564,16 +554,6 @@
             <variable name="LoadProfile" property="LoadProfile">false</variable>
           </defaultVarList>
           <action>cmd /c for /F "tokens=2" %i in ('date /t') do REG ADD "HKLM\SOF\SOE\IMAGE"  /v Builddate /t REG_SZ /d "%i" /f</action>
-        </step>
-        <step type="SMS_TaskSequence_RunCommandLineAction" name="CONFIG - Image Info-  Image Date" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
-          <defaultVarList>
-            <variable name="PackageID" property="PackageID" />
-            <variable name="RunAsUser" property="RunAsUser">false</variable>
-            <variable name="SMSTSRunCommandLineUserName" property="SMSTSRunCommandLineUserName"></variable>
-            <variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"></variable>
-            <variable name="LoadProfile" property="LoadProfile">false</variable>
-          </defaultVarList>
-          <action>cmd /c for /F "tokens=2" %i in ('date /t') do REG ADD "HKLM\SOF\SOE\IMAGE"  /v Imagedate /t REG_SZ /d "%i" /f</action>
         </step>
         <step type="SMS_TaskSequence_RunCommandLineAction" name="Unload local SOFTWARE Hive" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
           <defaultVarList>
@@ -685,6 +665,13 @@
       <step type="BDD_InstallApplication" name="First boot Customize" description="" disable="false" continueOnError="false" runIn="WinPEandFullOS" successCodeList="0 3010">
         <defaultVarList>
           <variable name="ApplicationGUID" property="ApplicationGUID">{e887ed85-9913-46ad-ab5f-f69f4954941b}</variable>
+          <variable name="ApplicationSuccessCodes" property="ApplicationSuccessCodes">0 3010</variable>
+        </defaultVarList>
+        <action>cscript.exe "%SCRIPTROOT%\ZTIApplications.wsf"</action>
+      </step>
+      <step type="BDD_InstallApplication" name="Bennell IT" description="" disable="false" continueOnError="false" runIn="WinPEandFullOS" successCodeList="0 3010">
+        <defaultVarList>
+          <variable name="ApplicationGUID" property="ApplicationGUID">{71b230e2-37e0-4eb2-b54f-89329e935e05}</variable>
           <variable name="ApplicationSuccessCodes" property="ApplicationSuccessCodes">0 3010</variable>
         </defaultVarList>
         <action>cscript.exe "%SCRIPTROOT%\ZTIApplications.wsf"</action>
@@ -968,7 +955,7 @@
         </defaultVarList>
         <action>Dism.exe /Online /Import-DefaultAppAssociations:%deployroot%\Applications\Config\WIN10\AppAssoc.xml</action>
       </step>
-      <step type="SMS_TaskSequence_RunCommandLineAction" name="Import Default Startmenu" description="" disable="true" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
+      <step type="SMS_TaskSequence_RunCommandLineAction" name="Import Default Startmenu" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
         <defaultVarList>
           <variable name="PackageID" property="PackageID" />
           <variable name="RunAsUser" property="RunAsUser">false</variable>
@@ -976,7 +963,7 @@
           <variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"></variable>
           <variable name="LoadProfile" property="LoadProfile">false</variable>
         </defaultVarList>
-        <action>xcopy "%deployroot%\Applications\Config\WIN10\LayoutModification.xml" "c:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml*" /Y</action>
+        <action>xcopy "%deployroot%\Applications\Config\CustomizeWindows\WIN10_Starmenu_no_office.xml" "c:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml*" /Y</action>
       </step>
       <step type="SMS_TaskSequence_RunCommandLineAction" name="Pause " description="" disable="true" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
         <defaultVarList>
@@ -999,9 +986,19 @@
     </group>
     <group expand="true" name="Clean Up" description="" disable="false" continueOnError="false">
       <action />
-      <step type="SMS_TaskSequence_RunCommandLineAction" name="Marking updates as permanent" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
+      <step type="SMS_TaskSequence_RunCommandLineAction" name="Reduce the amount of space used by a Service Pack" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
         <defaultVarList>
           <variable name="PackageID" property="PackageID"></variable>
+          <variable name="RunAsUser" property="RunAsUser">false</variable>
+          <variable name="SMSTSRunCommandLineUserName" property="SMSTSRunCommandLineUserName"></variable>
+          <variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"></variable>
+          <variable name="LoadProfile" property="LoadProfile">false</variable>
+        </defaultVarList>
+        <action>Dism.exe /online /Cleanup-Image /SPSuperseded</action>
+      </step>
+      <step type="SMS_TaskSequence_RunCommandLineAction" name="Marking updates as permanent" description="" disable="false" continueOnError="false" startIn="" successCodeList="0 3010" runIn="WinPEandFullOS">
+        <defaultVarList>
+          <variable name="PackageID" property="PackageID" />
           <variable name="RunAsUser" property="RunAsUser">false</variable>
           <variable name="SMSTSRunCommandLineUserName" property="SMSTSRunCommandLineUserName"></variable>
           <variable name="SMSTSRunCommandLineUserPassword" property="SMSTSRunCommandLineUserPassword"></variable>
