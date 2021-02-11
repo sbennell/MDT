@@ -1,7 +1,17 @@
-#Powershell script to customize windows Frist boot
-#Version 2020.1
-#Stewart Bennell 24/05/2020
-#
+<#	
+	.NOTES
+	===========================================================================
+	 Created on:   	23/05/2020
+	 Last Updated:  11/02/2020
+	 Created by:   	Stewart Bennell
+	 Filename:     	FirstbootCustomize.ps1
+	 Version:     	2021.14
+	===========================================================================
+	.DESCRIPTION
+	Customizes Clean Windows 10 Fristboot.
+	powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File .\CustomizeWindows_WMPS.ps1
+
+#>
 
 $Bloatware = @(
     #Unnecessary Windows 10 AppX Apps

@@ -25,7 +25,7 @@ If ( get-command -Name choco.exe -ErrorAction SilentlyContinue ){
 }
 
 If ($ChocoExe){
-	start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --force --confirm --install-if-not-installed -params $Params" -Wait
+	start-process -WindowStyle hidden -FilePath $ChocoExe -ArgumentList "upgrade $ChocoPackage --force --confirm --install-if-not-installed --ignore-checksums -params $Params" -Wait
 	If((& $ChocoExe list "$ChocoPackage" -li --limit-output --exact) -like "$ChocoPackage*"){
 		write-host "Installed"
 	} else {

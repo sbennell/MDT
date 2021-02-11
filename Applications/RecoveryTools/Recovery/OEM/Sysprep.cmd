@@ -41,6 +41,11 @@ if '%1'=='ELEV' (del "%vbsGetPrivileges%" 1>nul 2>nul  &  shift /1)
 CD "%~dp0%"
 CLS
 ECHO *****************************
+ECHO turn UAC on again 
+ECHO *****************************
+reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f
+
+ECHO *****************************
 ECHO Removing startup Scrit
 ECHO *****************************
 del "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\Setup Recovery.lnk"

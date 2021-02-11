@@ -1,8 +1,16 @@
-#Powershell script to customize windows Before Frist boot
-#Version 2020.6
-#Stewart Bennell 24/05/2020
-#Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+<#	
+	.NOTES
+	===========================================================================
+	 Created on:   	23/05/2020
+	 Last Updated:  11/02/2020
+	 Created by:   	Stewart Bennell
+	 Filename:     	PreBootCustomize.ps1
+	 Version:     	2021.14
+	===========================================================================
+	.DESCRIPTION
+	Customizes Clean Windows 10 PreBootCustomize.
 
+#>
 
 $tsenv = New-Object -COMObject Microsoft.SMS.TSEnvironment
 $OSDisk = "$($tsenv.Value("OSDisk"))"
@@ -43,7 +51,6 @@ reg add "HKU\Default_User\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Adv
 Write-Output "Disables Cortana Buttion"
 reg add "HKU\Default_User\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v  "ShowCortanaButton" /t REG_DWORD /d 0 /f
 
-
 #Set Default Folder When Opening Explorer to This PC
 Write-Output "Set Default Folder When Opening Explorer to This PC"
 reg add "HKU\Default_User\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v  "LaunchTo" /t REG_DWORD /d 1 /f
@@ -66,6 +73,16 @@ reg add "HKU\Default_User\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliv
 reg add "HKU\Default_User\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v  "PreInstalledAppsEnabled" /t REG_DWORD /d 0 /f
 reg add "HKU\Default_User\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v  "OemPreInstalledAppsEnabled" /t REG_DWORD /d 0 /f
 
+# Disable Bing Search in Start Menu
+Write-Host "Disabling Bing Search in Start Menu..."
+reg add "HKU\Default_User\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v  "BingSearchEnabled" /t REG_DWORD /d 0 /f
+
+# Disable Sticky keys prompt
+Write-Host "Disabling Sticky keys prompt..."
+reg add "HKU\Default_User\Control Panel\Accessibility\StickyKeys" /v  "Flags" /t REG_EXPAND_SZ /d Flags /f
+
+Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\StickyKeys" -Name "Flags" -Type String -Value Flags
+
 #Unload the Default User Profile NTUSER.DAT file
 Write-Output "Unload the Default User Profile NTUSER.DAT file"
 reg unload HKU\Default_User
@@ -86,13 +103,17 @@ reg add "HKLM\Default_software\Policies\Microsoft\Windows\System" /v  "DisableAc
 Write-Output "Disabling Windows Feedback Experience program"
 reg add "HKLM\Default_software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v  "Enabled" /t REG_DWORD /d 0 /f
 
-#Disabling Windows Feedback Experience program
+#Adding Registry key to prevent bloatware apps from returning
 Write-Output "Adding Registry key to prevent bloatware apps from returning"
 reg add "HKLM\Default_software\Policies\Microsoft\Windows\CloudContent" /v  "DisableWindowsConsumerFeatures" /t REG_DWORD /d 1 /f
 
 #Turns off Data Collection via the AllowTelemtry key by changing it to 0
 Write-Output "Turns off Data Collection via the AllowTelemtry key by changing it to 0"
-reg add "HKLM\Default_software\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v  "AllowTelemetry" /t REG_DWORD /d 1 /f
+reg add "HKLM\Default_software\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v  "AllowTelemetry" /t REG_DWORD /d 0 /f
+
+#Turns off UAC  via the EnableLUA key by changing it to 0
+Write-Output "Turns off UAC  via the EnableLUA key by changing it to 0"
+reg add "HKLM\Default_software\Microsoft\Windows\CurrentVersion\Policies\System" /v  "EnableLUA" /t REG_DWORD /d 0 /f
 
 #Unload the Software Hive
 reg unload HKLM\Default_software
